@@ -8,6 +8,11 @@ var productTypeAdditionalPrices = {
 	[PRODUCT_TYPE_OLD]: 35,
 }
 
+var userTypeDiscounts = {
+	[USER_TYPE_NORMAL]: 0,
+	[USER_TYPE_COMPANY]: 5,
+};
+
 var ENDDATE_DISCOUNT = 10;
 
 // price, the price of the product
@@ -15,6 +20,7 @@ var calculatePrice = function (userType, productType, price, publishedDate) {
 
 	var enddateDiscount = 0;
 	var productTypeAdditionalPrice = productTypeAdditionalPrices[productType];
+	var userTypeDiscount = userTypeDiscounts[userType];
 
 	// calculate enddateDiscount
 	if (productType == PRODUCT_TYPE_NEW &&
@@ -23,13 +29,7 @@ var calculatePrice = function (userType, productType, price, publishedDate) {
 	}
 
 	try	{
-		switch (userType) {
-		case USER_TYPE_NORMAL:
-			return price + productTypeAdditionalPrice - enddateDiscount;
-
-		case USER_TYPE_COMPANY:
-			return price + productTypeAdditionalPrice - 5 - enddateDiscount; // 5 is the company discount
-		}
+		return price + productTypeAdditionalPrice - (userTypeDiscount + enddateDiscount);
 	}	catch (ex)	{
 			console.log(ex);
 	}
