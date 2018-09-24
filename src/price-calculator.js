@@ -6,7 +6,7 @@ var PRODUCT_TYPE_OLD = 1;
 var productTypeAdditionalPrices = {
 	[PRODUCT_TYPE_NEW]: 25,
 	[PRODUCT_TYPE_OLD]: 35,
-}
+};
 
 var userTypeDiscounts = {
 	[USER_TYPE_NORMAL]: 0,
@@ -29,9 +29,9 @@ var calculatePrice = function (userType, productType, price, publishedDate) {
 	}
 
 	try	{
+		// Product price + product type price - rebate
 		return price + productTypeAdditionalPrice - (userTypeDiscount + enddateDiscount);
-	}	catch (ex)	{
-			console.log(ex);
+	}	catch (ex) {
+		console.log(ex);
 	}
-	return 0;
-}
+};
