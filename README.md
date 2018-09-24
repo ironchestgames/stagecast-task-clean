@@ -1,6 +1,6 @@
 # Fredrik Järnbröst's solution to Stagecast tech test
 
-I've only touched src/price-calculator.js and spec/price-calculator.specs.js (apart from adding a .gitattributes file and this README.)
+I've only touched `src/price-calculator.js` and `spec/price-calculator.specs.js` (apart from adding a `.gitattributes` file and this README.)
 
 Below are some changes that I think would be of benefit (both dev and maintenance-wise) if the project was planned to get medium/big.
 
