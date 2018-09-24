@@ -1,4 +1,4 @@
-#Fredrik Järnbröst's solution to Stagecast tech test
+# Fredrik Järnbröst's solution to Stagecast tech test
 
 I've only touched src/price-calculator.js and spec/price-calculator.specs.js (apart from adding a .gitattributes file and this README.)
 
